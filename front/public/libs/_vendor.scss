@@ -261,7 +261,7 @@
 		@if type-of($index) != number {
 			@warn "$index: #{quote($index)} is not a number for `remove-nth`.";
 		}
-		@else if $index == 0 {
+    @else if $index == 0 {
 			@warn "List index 0 must be a non-zero integer for `remove-nth`.";
 		}
 		@else if abs($index) > length($list) {
@@ -362,7 +362,7 @@
 			}
 
 		// Expand just the value?
-			@elseif $expandValue {
+			@else if $expandValue {
 			    @each $vendor in $vendor-prefixes {
 			        #{$property}: #{str-replace-all($value, '-prefix-', $vendor)};
 			    }
